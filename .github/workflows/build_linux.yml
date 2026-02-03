@@ -2,7 +2,7 @@ name: Build Linux Binary
 
 on: 
   push:
-    branches: [ main ] # Kodunu her pushladığında çalışır
+    branches: [ main ]
 
 jobs:
   build:
@@ -10,17 +10,17 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4 # v3 -> v4 yaptık
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5 # v4 -> v5 yaptık
       with:
         python-version: '3.10'
 
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y python3-tk  # Linux'ta GUI için şart
+        sudo apt-get install -y python3-tk
         pip install customtkinter watchdog pyinstaller
 
     - name: Build with PyInstaller
@@ -28,7 +28,7 @@ jobs:
         pyinstaller --onefile --noconsole --collect-all customtkinter --name "VortexSort_Linux" main.py
 
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4 # Hatanın asıl sebebi burasıydı, v4 yaptık
       with:
         name: VortexSort-Linux-Binary
         path: dist/VortexSort_Linux
