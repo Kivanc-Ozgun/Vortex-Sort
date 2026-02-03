@@ -3,6 +3,11 @@
 
 ---
 
+## 📥 [CLICK HERE TO DOWNLOAD VORTEX SORT (v1.0.0)](https://github.com/Kivanc-Ozgun/Vortex-Sort/releases/download/v1.0.0/VortexSort.exe)
+> **Fast, Reliable, and 100% Standalone.**
+
+---
+
 ### ⚡ **POWERFUL CAPABILITIES**
 
 **VORTEX SORT** is a high-performance system tool designed to eliminate digital clutter. Whether you have thousands of unsorted downloads or a messy desktop, Vortex Sort restructures your workspace in milliseconds.
@@ -36,7 +41,7 @@ Define your own folders and extensions. Custom rules are automatically given hig
 
 ### 📦 **INSTALLATION & DEPLOYMENT**
 
-*   **Standalone Executable:** Download **`VortexSort.exe`** from the Assets below.
+*   **Standalone Executable:** Run **`VortexSort.exe`** directly after downloading.
 *   **Zero Dependencies:** No Python installation or extra libraries required.
 *   **Portable:** Carry it in your USB drive and organize any computer instantly.
 
