@@ -1,0 +1,34 @@
+name: Build Linux Binary
+
+on: 
+  push:
+    branches: [ main ] # Kodunu her pushladığında çalışır
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y python3-tk  # Linux'ta GUI için şart
+        pip install customtkinter watchdog pyinstaller
+
+    - name: Build with PyInstaller
+      run: |
+        pyinstaller --onefile --noconsole --collect-all customtkinter --name "VortexSort_Linux" main.py
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: VortexSort-Linux-Binary
+        path: dist/VortexSort_Linux
